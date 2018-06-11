@@ -121,6 +121,46 @@
           }
         }
       }
+    },
+    "module-one-library": {
+      "root": "projects/module-one-library",
+      "sourceRoot": "projects/module-one-library/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/module-one-library/tsconfig.lib.json",
+            "project": "projects/module-one-library/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/module-one-library/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/module-one-library/src/test.ts",
+            "tsConfig": "projects/module-one-library/tsconfig.spec.json",
+            "karmaConfig": "projects/module-one-library/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/module-one-library/tsconfig.lib.json",
+              "projects/module-one-library/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "module-one"
