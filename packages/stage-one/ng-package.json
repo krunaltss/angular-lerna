@@ -1,0 +1,9 @@
+{
+  "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
+  "src": "./projects/stage-one-library/src",
+  "dest": "../result-stage/src/app/libs/stage-one",
+  "workingDirectory": "./dist/stage-one-library",
+  "lib": {
+    "entryFile": "public_api.ts"
+  }
+}
